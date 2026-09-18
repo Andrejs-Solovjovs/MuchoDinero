@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+/* Arimo — из пакета @fontsource/arimo */
+@import "@fontsource/arimo/400.css";
+@import "@fontsource/arimo/500.css";
+@import "@fontsource/arimo/700.css";
+
+@font-face {
+    font-family: "Arturo";
+    src: url("/fonts/Arturo-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-body: "Arimo", Arial, sans-serif;
+    --primary-background: #f8f2ed;
+    --secondary-background: #440f15;
+    --primary-color: #f1eeee;
+    --primary-border: #d2c4c3;
+    --primary-content-background: #feffff;
+}
+
+h1,p,ul {
+    margin: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    font-family: var(--font-body);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-background);
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+
+  &__main {
+    display: flex;
+    flex-direction: column; // для того что бы шапка была с верху
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 24px 32px;
+  }
+}

@@ -1,0 +1,34 @@
+<aside class="side-bar">
+  <header class="side-bar__header">
+    <a routerLink="/dashboard" class="side-bar__logo">profitplate</a>
+    <p class="side-bar__tagline">Insights serve higher profits</p>
+  </header>
+
+  <nav class="side-bar__nav" aria-label="Main navigation">
+    <ul class="side-bar__list">
+      @for (item of navItems; track item.path) {
+        <li>
+          <a
+            class="side-bar__link"
+            [routerLink]="item.path"
+            routerLinkActive="side-bar__link--active"
+            ariaCurrentWhenActive="page"
+          >
+            <img class="side-bar__icon" [src]="item.icon" alt="" />
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <section class="promo" aria-labelledby="promo-title">
+    <img class="promo__image" src="/assets/images/promotion_crown.png" alt="Promotional image" />
+    <h2 id="promo-title" class="promo__title">Take Your Restaurant to the Next Level</h2>
+    <p class="promo__text">Unlock More Features with the PRO Plan</p>
+    <a routerLink="/pro" class="promo__button">
+      <span>Learn more</span>
+      <lucide-icon [img]="arrowIcon" [size]="16" />
+    </a>
+  </section>
+</aside>

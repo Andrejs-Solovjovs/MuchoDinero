@@ -1,0 +1,72 @@
+.dashboard__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+img {
+    margin-right: 10px;
+}
+
+.dashboard__info h1 {
+    color: #440f15;
+    font-size: 27px;
+}
+
+.dashboard__info p {
+    color: #7d5e60;
+    font-size: 9px;
+}
+
+.dashboard__filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    // margin-left: auto;
+}
+
+.dashboard__filter-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0.5px solid #d2c4c3;
+    background: #fcf7f4;
+    padding: 8px 10px;
+    cursor: pointer;
+    border: 0.5px solid #d2c4c3;
+    border-radius: 8px;
+    color: black;
+    font-size: 14px;
+}
+
+.dashboard__export-button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0.5px solid #d2c4c3;
+    background: radial-gradient(circle at 0% 0%, #440f15, #963342);
+    border-color: transparent;
+    color: #fcf8f6;
+    padding: 8px 10px;
+    cursor: pointer;
+    border: 0.5px solid #d2c4c3;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.dashboard__filter-button--active {
+    background: radial-gradient(circle at 0% 0%, #440f15, #963342);
+    border-color: transparent;
+    color: #fcf8f6;
+}
+
+.dashboard__filter-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.dashboard__export-button img {
+    width: 16px;
+    height: 16px;
+}

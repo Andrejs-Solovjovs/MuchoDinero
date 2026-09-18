@@ -1,0 +1,175 @@
+:host {
+  display: block;
+  position: sticky; // что бы шапка двигалась вместе с прокруткой экрана, как position fixed крч
+  top: 0;
+  z-index: 10;
+}
+
+.header {
+  display: flex;
+  align-items: center;      
+  gap: 35px;
+  height: 59px;
+//   padding: 0 24px 0 15px;
+  background-color: var(--primary-background);
+  border-bottom: 1px solid #e3d9d3;
+}
+
+
+.header__button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.header__chevron {
+  width: 12px;
+//   height: 12px;
+  flex-shrink: 0;
+}
+
+// restauran
+.header__restaurant {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 15px;
+}
+
+.header__restaurant-photo {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.header__restaurant-card {
+  @extend .header__button;
+  justify-content: space-between; 
+  min-width: 210px;
+  min-height: 41px;
+  padding: 0 17px 0 12px;
+  background: var(--primary-content-background);
+  border: 1px solid var(--primary-border);
+  border-radius: 7px;
+  text-align: left;
+}
+
+.header__restaurant-text {
+  display: flex;
+  flex-direction: column; 
+  gap: 2px;
+}
+
+.header__restaurant-name {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.header__restaurant-address {
+  font-size: 8px;
+  color: #b4b0af;
+}
+
+// Search 
+.header__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto; 
+  width: 233px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: #fff;
+  box-shadow: 4px 11px 12px -9px rgba(32, 32, 32, .8);
+}
+
+.header__search-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.header__search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+
+  &::placeholder {
+    color: #a0a0a0;
+  }
+}
+
+// notifications
+.header__notifications {
+  @extend .header__button;
+  position: relative; 
+  padding: 4px;       
+
+  img {
+    width: 19px;
+    height: 23px;
+  }
+}
+
+.header__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  border-radius: 999px;
+  background-color: #b3212e;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 14px;
+  text-align: center;
+}
+
+// user info
+.header__user {
+  @extend .header__button;
+  gap: 10px;
+  margin-right: 15px;
+}
+
+.header__user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--secondary-background);
+  color: var(--primary-color);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.header__user-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.header__user-name {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.header__user-role {
+  font-size: 9px;
+  color: #6f6b6a;
+}

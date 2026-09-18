@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+
+  // Правая колонка шапка сверху, контент под ней
+  &__main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+}

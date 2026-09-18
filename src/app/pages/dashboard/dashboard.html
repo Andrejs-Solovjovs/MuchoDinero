@@ -1,0 +1,28 @@
+<section class="dashboard">
+    <div class="dashboard__head">
+        <div class="dashboard__info">
+            <h1 class="dashboard__title">Restaurant Dashboard</h1>
+            <p class="dashboard__subtitle">Key metrics, analytics, and the current status of your restaurant</p>
+        </div>
+        <div class="dashboard__filters">
+            @for (period of periods; track period.key) {
+            <button type="button" class="dashboard__filter-button"
+                [class.dashboard__filter-button--active]="selectedPeriod === period.key"
+                (click)="selectPeriod(period.key)">
+                {{ period.label }}
+            </button>
+            }
+            <button type="button" class="dashboard__filter-button">
+                <img class="dashboard__filter-icon" src="assets/images/reservations_black.png" alt="data picker" />
+                <span>Select period</span>
+            </button>
+        </div>
+        <div class="dashboard__export">
+            <button type="button" class="dashboard__export-button">
+                <img class="dashboard__filter-icon" src="assets/images/export.png" alt="data picker" />
+                <span>Export Report</span>
+            </button>
+        </div>
+    </div>
+
+</section>
