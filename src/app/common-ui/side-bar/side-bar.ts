@@ -1,22 +1,22 @@
 import { Component } from "@angular/core";
 import { RouterLink, RouterLinkActive } from "@angular/router";
-// import {
-//   LucideAngularModule,
-//   LucideIconData,
-//   House,
-//   ClipboardList,
-//   ShoppingBasket,
-//   CalendarDays,
-//   Star,
-//   ChartNoAxesColumn,
-//   Package,
-//   Users,
-//   Contact,
-//   FileText,
-//   Settings,
-//   Crown,
-//   ArrowRight,
-// } from "lucide-angular";  Не актуалочка 
+import {
+  LucideAngularModule,
+  LucideIconData,
+  House,
+  ClipboardList,
+  ShoppingBasket,
+  CalendarDays,
+  Star,
+  ChartNoAxesColumn,
+  Package,
+  Users,
+  Contact,
+  FileText,
+  Settings,
+  Crown,
+  ArrowRight,
+} from "lucide-angular"; 
 
 export interface NavItem {
   label: string;        // текст нав пагинации
@@ -26,11 +26,12 @@ export interface NavItem {
 
 @Component({
   selector: "app-side-bar",
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive,LucideAngularModule],
   templateUrl: "./side-bar.html",
   styleUrl: "./side-bar.scss",
 })
 export class SideBar {
+  readonly arrowIcon = ArrowRight;
 
   readonly navItems: NavItem[] = [
     { label: "Dashboard",    path: "/dashboard",    icon: "assets/images/dashboard.png" },

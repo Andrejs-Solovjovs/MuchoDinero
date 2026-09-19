@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SideBar } from './common-ui/side-bar/side-bar';
 import { Header } from './common-ui/header/header';
-import { Dashboard } from './pages/dashboard/dashboard';
 
 @Component({
   selector: 'app-root',

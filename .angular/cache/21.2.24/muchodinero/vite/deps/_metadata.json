@@ -2,54 +2,54 @@
   "hash": "55946c44",
   "configHash": "0a16fabc",
   "lockfileHash": "fb9922f9",
-  "browserHash": "91a10053",
+  "browserHash": "c3b33309",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "4b19089b",
-      "needsInterop": false
-    },
-    "@angular/platform-browser": {
-      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
-      "file": "@angular_platform-browser.js",
-      "fileHash": "4690949e",
-      "needsInterop": false
-    },
-    "@angular/router": {
-      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
-      "file": "@angular_router.js",
-      "fileHash": "8c729064",
-      "needsInterop": false
-    },
-    "lucide-angular": {
-      "src": "../../../../../../node_modules/lucide-angular/fesm2020/lucide-angular.mjs",
-      "file": "lucide-angular.js",
-      "fileHash": "27b673fc",
+      "fileHash": "95d82ccd",
       "needsInterop": false
     },
     "@angular/core/rxjs-interop": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/rxjs-interop.mjs",
       "file": "@angular_core_rxjs-interop.js",
-      "fileHash": "eb3bd939",
+      "fileHash": "15e25d68",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "862a9666",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "a547a166",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "a46273e8",
+      "fileHash": "fbda4b31",
+      "needsInterop": false
+    },
+    "lucide-angular": {
+      "src": "../../../../../../node_modules/lucide-angular/fesm2020/lucide-angular.mjs",
+      "file": "lucide-angular.js",
+      "fileHash": "a84e5355",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-HG3R4JSR": {
-      "file": "chunk-HG3R4JSR.js"
+    "chunk-Q5VYMFM2": {
+      "file": "chunk-Q5VYMFM2.js"
     },
-    "chunk-UQ4D5KIF": {
-      "file": "chunk-UQ4D5KIF.js"
+    "chunk-IUNSKNVQ": {
+      "file": "chunk-IUNSKNVQ.js"
     },
-    "chunk-V3DFKNYV": {
-      "file": "chunk-V3DFKNYV.js"
+    "chunk-JZHD6BAT": {
+      "file": "chunk-JZHD6BAT.js"
     },
     "chunk-PJVWDKLX": {
       "file": "chunk-PJVWDKLX.js"

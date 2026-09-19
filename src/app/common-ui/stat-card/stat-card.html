@@ -1,0 +1,14 @@
+<div class="stat__card">
+    <div class="stat-icon">
+        <img [src]="card().icon" [alt]="card().label" />
+    </div>
+    <div class="stat__content">
+        <div class="stat__content-label">{{ card().label }}</div>
+        <div class="stat__content-value">{{ card().value }}</div>
+        <div class="stat__content-change">
+            <img [src]="card().arrowIcon" [alt]="card().procentage" />
+            <span>{{ card().procentage }}</span>
+            <span class="stat__content-muted">{{ card().period }}</span>
+        </div>
+    </div>
+</div>

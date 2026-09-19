@@ -24,5 +24,9 @@
             </button>
         </div>
     </div>
-
+    <div class="dashboard__grid">
+        @for (card of cards; track card.key) {
+        <app-stat-card [card]="card"></app-stat-card>
+        }
+    </div>
 </section>
