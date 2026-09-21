@@ -1,0 +1,150 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+// Выбор статуса с цветной точкой 
+.status-select {
+  --dot: #1f8f4e; // works
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &[data-status="break"] { --dot: #e8a23a; }
+  &[data-status="closed"] { --dot: #b3212e; }
+
+  &__dot {
+    position: absolute;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dot);
+    pointer-events: none;
+  }
+
+  select {
+    appearance: none;
+    min-width: 82px;
+    padding: 6px 26px 6px 24px;
+    border: 0.5px solid var(--primary-border);
+    border-radius: 7px;
+    background: #fcf7f4 url("/assets/images/dropdownArrow.png") right 9px center / 10px no-repeat;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+  }
+}
+
+// Строчки блока
+.status {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;                        // занимает всю высоту под заголовком панели
+  justify-content: space-between; // строки равномерно распределяются по высоте
+  gap: 16px;
+
+  // иконка,подпись,значение справа
+  &__row {
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon { color: #1a1a1a; }
+
+  &__label { font-size: 11px; }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 11px;
+
+    &--dining { font-size: 12px; }
+
+    &--stack {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+  }
+
+  &__track {
+    width: 70px;
+    height: 5px;
+    border-radius: 999px;
+    background: #ebe3df;
+    overflow: hidden;
+  }
+
+  &__fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #6b1a24;
+  }
+
+  &__percent { font-size: 10px; }
+
+  &__presence {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1f8f4e;
+    }
+
+    &--missing::before { background: #e8a23a; }
+  }
+
+  &__big { font-size: 13px; }
+
+  &__change {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #028044;
+
+    &--bad { color: #b3212e; }
+
+    svg {
+      width: 8px;
+      height: 10px;
+
+      &.up { transform: rotate(180deg); }
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  &__stars {
+    color: #f2b01e;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  &__star--empty { color: #e3dcd8; }
+
+  &__muted {
+    font-size: 8px;
+    color: #b4b0af;
+  }
+}

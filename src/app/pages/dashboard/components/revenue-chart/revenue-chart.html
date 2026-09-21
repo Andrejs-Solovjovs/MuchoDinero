@@ -1,0 +1,21 @@
+<app-panel title="Revenue and orders" icon="assets/images/revenueStat.png" [iconTile]="true">
+  <div panel-actions class="chart-actions">
+    <div class="toggle" role="group" aria-label="Chart metric">
+      <button type="button" class="toggle__button"
+        [class.toggle__button--active]="metric() === 'revenue'"
+        (click)="metric.set('revenue')">Revenue</button>
+      <button type="button" class="toggle__button"
+        [class.toggle__button--active]="metric() === 'orders'"
+        (click)="metric.set('orders')">Orders</button>
+    </div>
+
+    <select class="select" aria-label="Granularity" (change)="setGranularity($event)">
+      <option value="hourly">Hourly</option>
+      <option value="daily">Daily</option>
+    </select>
+  </div>
+
+  <div class="chart">
+    <canvas baseChart type="line" [data]="data()" [options]="options" [plugins]="plugins"></canvas>
+  </div>
+</app-panel>

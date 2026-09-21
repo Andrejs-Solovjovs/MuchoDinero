@@ -6,6 +6,7 @@
   --sb-muted: rgba(241, 238, 238, .7); 
 
   display: block;
+  flex-shrink: 0; 
   width: var(--sb-width);
   height: 100vh;
   position: sticky;
@@ -150,4 +151,24 @@
       outline-offset: 2px;
     }
   }
+}
+
+// адаптивчик
+@media (max-height: 800px) {
+  .side-bar {
+    padding-top: 16px;
+
+    &__header { margin-bottom: 12px; }
+    &__list { gap: 2px; }
+    &__link { padding: 6px 12px; }
+  }
+
+  .promo {
+    margin-top: 12px;
+    padding: 12px;
+  }
+}
+
+@media (max-height: 680px) {
+  .promo__text { display: none; }
 }

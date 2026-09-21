@@ -1,0 +1,23 @@
+<app-panel title="Low Stock Items" icon="assets/images/inventory.png" seeAllLink="/inventory">
+  <ul class="stock">
+    @for (item of items; track item.name) {
+      <li class="stock__item">
+        @if (item.image) {
+          <img class="stock__photo" [src]="item.image" alt="" />
+        } @else {
+          <span class="stock__photo stock__photo--empty">{{ item.name[0] }}</span>
+        }
+
+        <span class="stock__info">
+          <span class="stock__name">{{ item.name }}</span>
+          <span class="stock__amount">{{ item.amount }}</span>
+        </span>
+
+        <span class="stock__state">
+          <span class="stock__badge stock__badge--{{ item.level }}">{{ levelLabel[item.level] }}</span>
+          <span class="stock__left">Left {{ item.daysLeft }} {{ item.daysLeft === 1 ? "day" : "days" }}</span>
+        </span>
+      </li>
+    }
+  </ul>
+</app-panel>

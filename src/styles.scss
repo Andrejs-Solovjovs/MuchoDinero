@@ -20,6 +20,12 @@
     --primary-content-background: #feffff;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box; // padding и border входят в width, а не прибавляются к ней
+}
+
 h1,p,ul {
     margin: 0;
 }

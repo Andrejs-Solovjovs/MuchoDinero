@@ -1,0 +1,27 @@
+<section class="panel">
+  <header class="panel__header">
+    @if (icon()) {
+      <span class="panel__icon" [class.panel__icon--tile]="iconTile()">
+        <span class="panel__glyph" [style.--glyph]="'url(' + icon() + ')'"></span>
+      </span>
+    }
+
+    <h2 class="panel__title">{{ title() }}</h2>
+
+    <div class="panel__actions">
+      <ng-content select="[panel-actions]" />
+    </div>
+
+    @if (seeAllLink()) {
+      <a class="panel__see-all" [routerLink]="seeAllLink()">
+        See all
+        <svg class="panel__arrow" viewBox="0 0 14 10" aria-hidden="true">
+          <path d="M1 5h12M9 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    }
+  </header>
+
+  <ng-content />
+</section>

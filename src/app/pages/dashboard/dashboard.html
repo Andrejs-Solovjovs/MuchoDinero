@@ -29,4 +29,18 @@
         <app-stat-card [card]="card"></app-stat-card>
         }
     </div>
+
+    <!-- График (2/3 ширины) + топ блюд (1/3) -->
+    <div class="dashboard__row">
+        <app-revenue-chart />
+        <app-top-dishes />
+    </div>
+
+    <!-- Нижний ряд: 2 широких блока + 2 узких -->
+    <div class="dashboard__row dashboard__row--bottom">
+        <app-restaurant-status />
+        <app-upcoming-reservations />
+        <app-low-stock />
+        <app-important-today />
+    </div>
 </section>

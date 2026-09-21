@@ -1,0 +1,27 @@
+<app-panel title="Top-Selling Dishes" icon="assets/images/18.png" seeAllLink="/menu">
+  <ol class="dishes">
+    @for (dish of dishes; track dish.name) {
+      <li class="dishes__item">
+        <span class="dishes__rank">{{ $index + 1 }}</span>
+
+        @if (dish.image) {
+          <img class="dishes__photo" [src]="dish.image" alt="" />
+        } @else {
+          <span class="dishes__photo dishes__photo--empty">{{ dish.name[0] }}</span>
+        }
+
+        <span class="dishes__info">
+          <span class="dishes__name">{{ dish.name }}</span>
+          <span class="dishes__portions">{{ dish.portions }} portion</span>
+        </span>
+
+        <span class="dishes__bar">
+          <span class="dishes__track">
+            <span class="dishes__fill" [style.width.%]="percent(dish)"></span>
+          </span>
+          <span class="dishes__sum">{{ dish.revenue }} €</span>
+        </span>
+      </li>
+    }
+  </ol>
+</app-panel>

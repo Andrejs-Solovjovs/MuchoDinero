@@ -1,0 +1,65 @@
+<app-panel title="Restaurant Status" icon="assets/images/19.png">
+  <label panel-actions class="status-select" [attr.data-status]="status()">
+    <span class="status-select__dot"></span>
+    <select aria-label="Restaurant status" (change)="setStatus($event)">
+      @for (s of statuses; track s.value) {
+        <option [value]="s.value" [selected]="s.value === status()">{{ s.label }}</option>
+      }
+    </select>
+  </label>
+
+  <ul class="status">
+    <li class="status__row">
+      <app-icon class="status__icon" src="assets/images/18.png" [size]="18" />
+      <span class="status__label">Dining Area</span>
+      <span class="status__value status__value--dining">
+        <span>{{ dining.occupied }}/{{ dining.capacity }}</span>
+        <span class="status__track">
+          <span class="status__fill" [style.width.%]="diningPercent()"></span>
+        </span>
+        <span class="status__percent">{{ diningPercent() }} %</span>
+      </span>
+    </li>
+
+    <li class="status__row">
+      <app-icon class="status__icon" src="assets/images/22.png" [size]="20" />
+      <span class="status__label">Staff on Shift</span>
+      <span class="status__value">
+        <span class="status__presence" [class.status__presence--missing]="!allStaffPresent">
+          {{ allStaffPresent ? "Everyone is present" : "Someone is missing" }}
+        </span>
+      </span>
+    </li>
+
+    <li class="status__row">
+      <app-icon class="status__icon" src="assets/images/23.png" [size]="20" />
+      <span class="status__label">Average Serving Time</span>
+      <span class="status__value status__value--stack">
+        <strong class="status__big">{{ serving.minutes }} min</strong>
+        <span class="status__change" [class.status__change--bad]="serving.change > 0">
+          <svg viewBox="0 0 10 12" aria-hidden="true" [class.up]="serving.change > 0">
+            <path d="M5 1v10M1 7l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          {{ serving.change }}%
+        </span>
+      </span>
+    </li>
+
+    <li class="status__row">
+      <app-icon class="status__icon" src="assets/images/24.png" [size]="20" />
+      <span class="status__label">Overall Rating</span>
+      <span class="status__value status__value--stack">
+        <span class="status__rating">
+          {{ ratingText }}
+          <span class="status__stars" [attr.aria-label]="ratingText + ' out of 5'">
+            @for (n of stars; track n) {
+              <span [class.status__star--empty]="n > rating.value">★</span>
+            }
+          </span>
+        </span>
+        <span class="status__muted">Based on {{ rating.reviews }} reviews</span>
+      </span>
+    </li>
+  </ul>
+</app-panel>

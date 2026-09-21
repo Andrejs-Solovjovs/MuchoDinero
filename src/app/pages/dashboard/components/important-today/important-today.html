@@ -1,0 +1,16 @@
+<app-panel title="Important Today" icon="assets/images/notifications.png" seeAllLink="/reports">
+  <ul class="notices">
+    @for (n of notices; track n.title + n.time) {
+      <li class="notices__item">
+        <span class="notices__icon">
+          <app-icon [src]="n.icon" [size]="14" />
+        </span>
+        <span class="notices__body">
+          <span class="notices__title">{{ n.title }}</span>
+          <span class="notices__text">{{ n.text }}</span>
+        </span>
+        <time class="notices__time">{{ n.time }}</time>
+      </li>
+    }
+  </ul>
+</app-panel>

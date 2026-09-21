@@ -1,0 +1,110 @@
+:host {
+  display: block;
+  min-width: 0;
+  container-type: inline-size; 
+}
+
+.dishes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;                        // занимает всю высоту под заголовком панели
+  justify-content: space-between; // строки равномерно распределяются по высоте
+  gap: 10px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 22px 52px minmax(0, 1fr) minmax(96px, 130px);
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #f1ebe8;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  &__photo {
+    width: 52px;
+    height: 26px;
+    border-radius: 999px;
+    object-fit: cover;
+
+    &--empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 0% 0%, #440f15, #963342);
+      color: #fcf8f6;
+      font-size: 11px;
+      font-weight: 700;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__portions {
+    font-size: 9px;
+    color: #b4b0af;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 999px;
+    background: #f1ebe8;
+  }
+
+  &__track {
+    flex: 1;
+    height: 5px;
+    border-radius: 999px;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  &__fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #6b1a24;
+  }
+
+  &__sum {
+    font-size: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+@container (max-width: 360px) {
+  .dishes__item {
+    grid-template-columns: 22px 40px minmax(0, 1fr) 96px;
+    gap: 8px;
+  }
+
+  .dishes__photo { width: 40px; }
+}

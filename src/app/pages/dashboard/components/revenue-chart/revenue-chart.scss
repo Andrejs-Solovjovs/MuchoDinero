@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.chart-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle {
+  display: flex;
+  padding: 2px;
+  border: 0.5px solid var(--primary-border);
+  border-radius: 7px;
+  background: #fcf7f4;
+
+  &__button {
+    padding: 4px 8px;
+    border: 0;
+    border-radius: 5px;
+    background: none;
+    font-size: 11px;
+    color: #1a1a1a;
+    cursor: pointer;
+
+    &--active {
+      background: radial-gradient(circle at 0% 0%, #440f15, #963342);
+      color: #fcf8f6;
+    }
+  }
+}
+
+// Выпадающий список Hourly / Daily
+.select {
+  appearance: none;
+  min-width: 82px;
+  padding: 6px 28px 6px 10px;
+  border: 0.5px solid var(--primary-border);
+  border-radius: 7px;
+  background: #fcf7f4 url("/assets/images/dropdownArrow.png") right 10px center / 10px no-repeat;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.chart {
+  position: relative;
+  flex: 1;           // растягивается, если соседний блок в ряду выше
+  min-height: 210px; // но не меньше этого
+}

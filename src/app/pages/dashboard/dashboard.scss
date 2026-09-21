@@ -1,7 +1,9 @@
 .dashboard__head {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap; 
     justify-content: space-between;
+    gap: 16px;
     margin-bottom: 22px;
 }
 
@@ -73,7 +75,34 @@ img {
 
 .dashboard__grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 8px;
+}
+
+// Второй ряд: график занимает 2 части ширины, топ блюд — 1
+.dashboard__row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+}
+
+// Нижний ряд: пропорции 2 : 2 : 1 : 1, как в макете
+.dashboard__row--bottom {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+
+// Ноутбук поуже: нижний ряд раскладывается сеткой 2 x 2
+@media (max-width: 1300px) {
+    .dashboard__row--bottom {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+// Узкий экран: все блоки друг под другом
+@media (max-width: 1150px) {
+    .dashboard__row,
+    .dashboard__row--bottom {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }

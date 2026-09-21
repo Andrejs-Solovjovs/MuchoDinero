@@ -1,0 +1,12 @@
+<app-panel title="Upcoming Reservations" icon="assets/images/reservations.png" seeAllLink="/reservations">
+  <ul class="reservations">
+    @for (r of upcoming; track r.time + r.name) {
+      <li class="reservations__row">
+        <time class="reservations__time">{{ r.time }}</time>
+        <span class="reservations__name">{{ r.name }}</span>
+        <span class="reservations__event">{{ r.event }}</span>
+        <span class="reservations__guests">{{ r.guests }} person</span>
+      </li>
+    }
+  </ul>
+</app-panel>

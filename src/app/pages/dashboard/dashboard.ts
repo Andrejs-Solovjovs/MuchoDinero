@@ -1,9 +1,15 @@
 import { Component } from "@angular/core";
 import { StatCard, StatCardData } from "../../common-ui/stat-card/stat-card";
+import { RevenueChart } from "./components/revenue-chart/revenue-chart";
+import { TopDishes } from "./components/top-dishes/top-dishes";
+import { RestaurantStatus } from "./components/restaurant-status/restaurant-status";
+import { UpcomingReservations } from "./components/upcoming-reservations/upcoming-reservations";
+import { LowStock } from "./components/low-stock/low-stock";
+import { ImportantToday } from "./components/important-today/important-today";
 
 @Component({
   selector: "app-dashboard",
-  imports: [StatCard],
+  imports: [StatCard, RevenueChart, TopDishes, RestaurantStatus, UpcomingReservations, LowStock, ImportantToday],
   templateUrl: "./dashboard.html",
   styleUrl: "./dashboard.scss",
 })
